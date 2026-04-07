@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -239,174 +239,331 @@
                 radial-gradient(120% 80% at 88% 95%, rgba(93, 255, 198, 0.12), transparent 66%),
                 linear-gradient(165deg, #0f1317 0%, #090b0f 65%, #06070a 100%);
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2.2rem 1.15rem;
-        }
-
-        .app-editorial-card {
-            position: relative;
-            width: 100%;
-            max-width: 268px;
-            aspect-ratio: 1.47 / 1;
-            border-radius: 1rem;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 82% 18%, rgba(211, 130, 255, 0.4), transparent 38%),
-                radial-gradient(circle at 8% 82%, rgba(176, 130, 255, 0.45), transparent 44%),
-                linear-gradient(135deg, #f7f1fa 0%, #eceef7 52%, #e6e9f8 100%);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 18px 45px rgba(147, 106, 255, 0.28);
-            animation: editorialCardDrift 8s ease-in-out infinite;
-        }
-
-        .app-editorial-card::before {
-            content: "";
-            position: absolute;
-            inset: -22% auto -14% -30%;
-            width: 75%;
-            background:
-                radial-gradient(circle at 42% 18%, rgba(212, 162, 255, 0.5), transparent 48%),
-                radial-gradient(circle at 30% 48%, rgba(180, 146, 255, 0.55), transparent 45%),
-                radial-gradient(circle at 60% 80%, rgba(178, 142, 255, 0.42), transparent 46%);
-            filter: blur(3px);
-            transform: rotate(-8deg);
-            animation: editorialMist 9s ease-in-out infinite;
-        }
-
-        .app-editorial-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.42) 38%, transparent 55%);
-            transform: translateX(-135%);
-            animation: editorialShine 6s ease-in-out infinite;
-        }
-
-        .app-editorial-content {
-            position: relative;
-            z-index: 2;
-            height: 100%;
-            display: grid;
-            grid-template-columns: 1.05fr 0.72fr;
             align-items: stretch;
-            gap: 0.55rem;
-            padding: 0.65rem 0.7rem;
+            justify-content: stretch;
+            padding: 0.55rem;
         }
 
-        .app-editorial-left {
+        .app-home-preview {
+            height: 100%;
+            width: 100%;
+            border-radius: 2.2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            background:
+                radial-gradient(120% 90% at 15% -2%, rgba(0, 212, 255, 0.2), transparent 43%),
+                radial-gradient(120% 90% at 88% 102%, rgba(138, 44, 255, 0.23), transparent 52%),
+                linear-gradient(175deg, #05070c 0%, #020208 45%, #000000 100%);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 35px rgba(0, 0, 0, 0.45);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            color: #121018;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+            font-family: 'Inter', sans-serif;
         }
 
-        .app-editorial-kicker {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.45rem;
-            letter-spacing: 0.23em;
-            text-transform: uppercase;
-            opacity: 0.78;
-            margin-bottom: 0.25rem;
+        .app-home-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.72rem 0.85rem 0.58rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.68rem;
+            background: linear-gradient(180deg, rgba(3, 5, 9, 0.95), rgba(3, 5, 9, 0.72));
+            backdrop-filter: blur(3px);
         }
 
-        .app-editorial-title {
+        .app-home-icon {
+            color: #00d4ff;
+            opacity: 0.95;
+        }
+
+        .app-home-brand {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.03rem;
-            line-height: 0.88;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            max-width: 9.1ch;
+            font-size: 0.84rem;
+            letter-spacing: 0.08em;
+            font-weight: 800;
+            color: #f5fdff;
+            text-shadow: 0 0 16px rgba(0, 212, 255, 0.38);
+        }
+
+        .app-home-main {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.58rem;
+            padding: 0.78rem 0.7rem 0.35rem;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        .app-home-main::-webkit-scrollbar {
+            display: none;
+        }
+
+        .app-home-title {
+            display: flex;
+            flex-direction: column;
+            gap: 0.05rem;
+        }
+
+        .app-home-title h3 {
             margin: 0;
-        }
-
-        .app-editorial-sub {
-            margin-top: 0.42rem;
-            font-size: 0.41rem;
-            letter-spacing: 0.11em;
-            text-transform: uppercase;
-            opacity: 0.62;
-            font-weight: 500;
-        }
-
-        .app-editorial-book {
-            position: relative;
-            align-self: center;
-            width: 100%;
-            height: 84%;
-            max-height: 144px;
-            border-radius: 0.45rem;
-            background:
-                linear-gradient(185deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 45%),
-                linear-gradient(155deg, #c65dff 0%, #9149ff 48%, #5823be 100%);
-            box-shadow: 0 12px 24px rgba(111, 54, 201, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            overflow: hidden;
-            animation: editorialBookPulse 4.5s ease-in-out infinite;
-        }
-
-        .app-editorial-book::before {
-            content: "";
-            position: absolute;
-            top: 0.45rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 68%;
-            aspect-ratio: 1;
-            border-radius: 999px;
-            background:
-                radial-gradient(circle at 36% 24%, rgba(255, 255, 255, 0.95), rgba(210, 227, 255, 0.35) 48%, rgba(111, 40, 180, 0.1) 72%, transparent 76%),
-                radial-gradient(circle at 66% 70%, rgba(84, 233, 255, 0.75), transparent 62%);
-            filter: blur(0.3px);
-        }
-
-        .app-editorial-book::after {
-            content: "";
-            position: absolute;
-            inset: 0.3rem;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 0.32rem;
-            pointer-events: none;
-        }
-
-        .app-book-label {
-            position: absolute;
-            left: 0.4rem;
-            right: 0.4rem;
-            bottom: 0.45rem;
-            padding: 0.3rem 0.36rem;
-            border-radius: 0.3rem;
-            background: rgba(10, 8, 20, 0.58);
-            color: #f4f5ff;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.39rem;
-            line-height: 1.05;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
+            font-size: 0.92rem;
             font-weight: 700;
-            backdrop-filter: blur(2px);
         }
 
-        @keyframes editorialCardDrift {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-5px) scale(1.015); }
+        .app-home-title p {
+            margin: 0;
+            font-size: 0.44rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.56);
         }
 
-        @keyframes editorialMist {
-            0%, 100% { transform: translateX(0) rotate(-8deg); opacity: 0.95; }
-            50% { transform: translateX(12px) rotate(-2deg); opacity: 0.7; }
+        .app-home-search {
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            background: rgba(14, 15, 23, 0.88);
+            padding: 0.4rem 0.6rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.49rem;
+            display: flex;
+            align-items: center;
+            gap: 0.38rem;
         }
 
-        @keyframes editorialShine {
-            0%, 75%, 100% { transform: translateX(-135%); }
-            38% { transform: translateX(145%); }
+        .app-home-chip-row {
+            display: flex;
+            gap: 0.36rem;
+            padding-bottom: 0.1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
         }
 
-        @keyframes editorialBookPulse {
-            0%, 100% { transform: translateY(0); box-shadow: 0 12px 24px rgba(111, 54, 201, 0.45); }
-            50% { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(111, 54, 201, 0.56); }
+        .app-home-chip-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .app-home-chip {
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.18rem 0.5rem;
+            font-size: 0.4rem;
+            color: rgba(255, 255, 255, 0.72);
+            white-space: nowrap;
+        }
+
+        .app-home-chip--active {
+            border-color: rgba(0, 212, 255, 0.85);
+            color: #8eefff;
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.42);
+            background: rgba(0, 212, 255, 0.09);
+        }
+
+        .app-home-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.05rem;
+        }
+
+        .app-home-section-left {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.28rem;
+        }
+
+        .app-home-section-emoji {
+            font-size: 0.58rem;
+        }
+
+        .app-home-section h4 {
+            margin: 0;
+            font-size: 0.57rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .app-home-count {
+            min-width: 0.72rem;
+            height: 0.72rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.36rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0.2rem;
+        }
+
+        .app-home-link {
+            font-size: 0.4rem;
+            color: rgba(0, 212, 255, 0.9);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .app-home-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.16) 20%, rgba(255, 255, 255, 0.16) 80%, transparent 100%);
+            margin: 0.08rem 0;
+        }
+
+        .app-home-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.44rem;
+        }
+
+        .app-home-card {
+            border-radius: 0.92rem;
+            border: 1px solid rgba(138, 44, 255, 0.62);
+            background:
+                radial-gradient(120% 80% at 20% 10%, rgba(0, 212, 255, 0.09), transparent 40%),
+                linear-gradient(170deg, rgba(9, 10, 17, 0.95), rgba(4, 4, 10, 0.95));
+            box-shadow: inset 0 0 18px rgba(138, 44, 255, 0.15), 0 0 16px rgba(138, 44, 255, 0.18);
+            padding: 0.44rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            animation: appCardPulse 6s ease-in-out infinite;
+            min-height: 8.3rem;
+        }
+
+        .app-home-card-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.3rem;
+            align-items: center;
+        }
+
+        .app-home-id {
+            font-size: 0.33rem;
+            color: #cb8bff;
+            border: 1px solid rgba(138, 44, 255, 0.5);
+            border-radius: 999px;
+            padding: 0.12rem 0.3rem;
+            line-height: 1;
+        }
+
+        .app-home-chip-inline {
+            align-self: flex-start;
+            font-size: 0.34rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #7cecff;
+            border: 1px solid rgba(0, 212, 255, 0.52);
+            border-radius: 999px;
+            padding: 0.13rem 0.31rem;
+        }
+
+        .app-home-card-title {
+            margin: 0;
+            font-size: 0.56rem;
+            line-height: 1.15;
+            font-weight: 700;
+            color: #f2f6ff;
+        }
+
+        .app-home-card-sub {
+            margin: 0;
+            font-size: 0.34rem;
+            color: rgba(0, 212, 255, 0.85);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .app-home-card-text {
+            margin: 0;
+            font-size: 0.36rem;
+            color: rgba(255, 255, 255, 0.67);
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+
+        .app-home-meta {
+            margin-top: auto;
+            font-size: 0.34rem;
+            color: rgba(255, 255, 255, 0.57);
+        }
+
+        .app-home-cta {
+            margin-top: 0.15rem;
+            border: 1px solid rgba(0, 212, 255, 0.7);
+            border-radius: 999px;
+            padding: 0.22rem 0.35rem;
+            text-align: center;
+            font-size: 0.38rem;
+            font-weight: 700;
+            color: #06131b;
+            background: linear-gradient(135deg, #00d4ff 0%, #00a3ff 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+        }
+
+        .app-home-more-section {
+            margin-top: 0.2rem;
+            padding-bottom: 0.05rem;
+        }
+
+        .app-home-ghost-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.44rem;
+            opacity: 0.72;
+        }
+
+        .app-home-ghost-card {
+            border-radius: 0.8rem;
+            border: 1px solid rgba(138, 44, 255, 0.48);
+            height: 2.5rem;
+            background: linear-gradient(170deg, rgba(7, 8, 14, 0.9), rgba(3, 3, 7, 0.95));
+        }
+
+        .app-home-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.35rem 0.35rem 0.38rem;
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 0.2rem;
+            color: rgba(255, 255, 255, 0.64);
+            text-align: center;
+            letter-spacing: 0.01em;
+            background: linear-gradient(180deg, rgba(2, 4, 8, 0.65), rgba(2, 4, 8, 0.95));
+        }
+
+        .app-home-bottom-item {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.12rem;
+            font-size: 0.28rem;
+            line-height: 1.1;
+        }
+
+        .app-home-bottom-item i {
+            font-size: 0.58rem;
+        }
+
+        .app-home-bottom .is-active {
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.38);
+        }
+
+        .app-home-bottom .is-danger {
+            color: #ff6565;
+        }
+
+        @keyframes appCardPulse {
+            0%, 100% { box-shadow: inset 0 0 18px rgba(138, 44, 255, 0.15), 0 0 16px rgba(138, 44, 255, 0.18); }
+            50% { box-shadow: inset 0 0 20px rgba(138, 44, 255, 0.24), 0 0 20px rgba(0, 212, 255, 0.16); }
         }
 
         .scanner-line {
@@ -576,10 +733,7 @@
             .dna-node,
             .dna-sweep,
             .dna-orbit,
-            .app-editorial-card,
-            .app-editorial-card::before,
-            .app-editorial-card::after,
-            .app-editorial-book,
+            .app-home-card,
             .paywall-chip,
             .pulse-glow,
             .orb-drift,
@@ -716,16 +870,16 @@
             <h3 class="text-sm md:text-base font-display mb-6 opacity-70 tracking-[0.2em] uppercase">Biosystem Peptídeos</h3>
             
             <h1 class="font-display text-5xl md:text-7xl font-black mb-8 leading-[1.1]">
-                <span class="gradient-text">Peptídeos Essenciais - Domine a Ciência da Regeneração, Queima de Gordura e Ganho de Massa</span>
+                <span class="gradient-text">Peptídeos - Domine a Ciência da Regeneração, Queima de Gordura e Ganho de Massa</span>
             </h1>
 
             <p class="max-w-2xl mx-auto text-gray-400 mb-12 text-lg md:text-xl font-light leading-relaxed">
-                Manual de Diluição, Dosagem, Ciclos, Cálculadora de doses, Estudos Científicos, Manual de Aplicação e Contato de compra segura
+                Manual de Diluição, Dosagem, Ciclos, Calculadora de Doses, Estudos Científicos, Manual de Aplicação e contato de compra segura
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-14" data-aos="fade-up" data-aos-delay="200">
                 <div class="text-center group">
-                    <div class="font-display text-3xl font-bold text-biosystem-500 group-hover:scale-110 transition-transform number-breathe">+60 PROTOCOLOS</div>
+                    <div class="font-display text-3xl font-bold text-biosystem-500 group-hover:scale-110 transition-transform number-breathe">+50 PROTOCOLOS</div>
                     <div class="text-xs opacity-60 uppercase tracking-widest mt-1">masculinos e femininos</div>
                 </div>
                 <div class="h-12 w-px bg-gradient-to-b from-transparent via-gray-700 to-transparent"></div>
@@ -771,8 +925,8 @@
                     <div class="w-20 h-20 mx-auto bg-biosystem-900/50 rounded-2xl flex items-center justify-center mb-6 border border-biosystem-500/20 group-hover:bg-biosystem-500/10 transition-colors">
                         <i class="fas fa-bolt text-4xl text-biosystem-500"></i>
                     </div>
-                    <h3 class="font-display font-bold mb-3 text-2xl text-white group-hover:text-biosystem-500 transition-colors">Semaglutida</h3>
-                    <p class="text-gray-400 leading-relaxed">Guia prático de titulação para controle de apetite, queima de gordura e consistência nos resultados.</p>
+                    <h3 class="font-display font-bold mb-3 text-2xl text-white group-hover:text-biosystem-500 transition-colors">MOTS-c</h3>
+                    <p class="text-gray-400 leading-relaxed">Peptídeo mitocondrial que regula o metabolismo, melhora a sensibilidade à insulina, auxilia na perda de gordura, protege o coração, favorece o desempenho muscular e pode contribuir para a longevidade.</p>
                 </div>
             </div>
         </div>
@@ -786,17 +940,84 @@
                 <div class="phone-mockup float-anim border-[6px] border-[#1a1a1a] bg-black w-[320px] h-[640px]">
                     <div class="scanner-line overflow-hidden rounded-[2.5rem]"></div>
                     <div class="app-screen">
-                        <article class="app-editorial-card" aria-label="Prévia do material Peptídeos Essenciais">
-                            <div class="app-editorial-content">
-                                <div class="app-editorial-left">
-                                    <span class="app-editorial-kicker">Biosystem Peptídeos</span>
-                                    <h3 class="app-editorial-title">Peptídeos Essenciais</h3>
-                                    <p class="app-editorial-sub">Segredos da Beleza, Pele e Juventude</p>
+                        <article class="app-home-preview" aria-label="Prévia da home do aplicativo Biosystem">
+                            <header class="app-home-topbar">
+                                <i class="fas fa-arrow-left app-home-icon"></i>
+                                <span class="app-home-brand">BIOSYSTEM</span>
+                                <i class="fas fa-bars text-white/60"></i>
+                            </header>
+                            <div class="app-home-main">
+                                <div class="app-home-title">
+                                    <h3>Biblioteca</h3>
+                                    <p>64 peptídeos catalogados</p>
                                 </div>
-                                <div class="app-editorial-book" aria-hidden="true">
-                                    <span class="app-book-label">Segredos da<br>Beleza e Juventude</span>
+                                <div class="app-home-search">
+                                    <i class="fas fa-search"></i>
+                                    Buscar peptídeo...
+                                </div>
+                                <div class="app-home-chip-row" aria-hidden="true">
+                                    <span class="app-home-chip app-home-chip--active">Todos</span>
+                                    <span class="app-home-chip">Performance</span>
+                                    <span class="app-home-chip">Recuperação</span>
+                                    <span class="app-home-chip">Longevidade</span>
+                                </div>
+                                <div class="app-home-divider"></div>
+                                <div class="app-home-section">
+                                    <div class="app-home-section-left">
+                                        <span class="app-home-section-emoji">⚡</span>
+                                        <h4>Performance &amp; Anabolismo</h4>
+                                        <span class="app-home-count">9</span>
+                                    </div>
+                                    <span class="app-home-link">Ver todos</span>
+                                </div>
+                                <div class="app-home-cards">
+                                    <article class="app-home-card">
+                                        <div class="app-home-card-top">
+                                            <span class="app-home-chip-inline">Clínico</span>
+                                            <span class="app-home-id">~528</span>
+                                        </div>
+                                        <h5 class="app-home-card-title">MK-677 (Ibutamoren)</h5>
+                                        <p class="app-home-card-sub">MK-677</p>
+                                        <p class="app-home-card-text">Secretagogo de GH não peptídico e ativo por via oral.</p>
+                                        <span class="app-home-meta">t1/2 ~24 horas</span>
+                                        <span class="app-home-cta"><i class="fas fa-flask"></i> Calcular Dose</span>
+                                    </article>
+                                    <article class="app-home-card">
+                                        <div class="app-home-card-top">
+                                            <span class="app-home-chip-inline">Clínico</span>
+                                            <span class="app-home-id">~711</span>
+                                        </div>
+                                        <h5 class="app-home-card-title">Ipamorelin</h5>
+                                        <p class="app-home-card-sub">IPM</p>
+                                        <p class="app-home-card-text">Secretagogo seletivo que estimula pico natural de GH.</p>
+                                        <span class="app-home-meta">t1/2 ~2 horas</span>
+                                        <span class="app-home-cta"><i class="fas fa-flask"></i> Calcular Dose</span>
+                                    </article>
+                                </div>
+                                <div class="app-home-more-section">
+                                    <div class="app-home-section">
+                                        <div class="app-home-section-left">
+                                            <span class="app-home-section-emoji">🧬</span>
+                                            <h4>Recuperação Tecidual</h4>
+                                            <span class="app-home-count">6</span>
+                                        </div>
+                                        <span class="app-home-link">Ver todos</span>
+                                    </div>
+                                </div>
+                                <div class="app-home-ghost-cards" aria-hidden="true">
+                                    <div class="app-home-ghost-card"></div>
+                                    <div class="app-home-ghost-card"></div>
                                 </div>
                             </div>
+                            <footer class="app-home-bottom" aria-hidden="true">
+                                <span class="app-home-bottom-item"><i class="fas fa-bars"></i><span>Início</span></span>
+                                <span class="app-home-bottom-item is-active"><i class="fas fa-search"></i><span>Biblioteca</span></span>
+                                <span class="app-home-bottom-item"><i class="fas fa-calculator"></i><span>Calculadora</span></span>
+                                <span class="app-home-bottom-item"><i class="fas fa-bolt"></i><span>Protocolos</span></span>
+                                <span class="app-home-bottom-item"><i class="fas fa-fingerprint"></i><span>Guia</span></span>
+                                <span class="app-home-bottom-item"><i class="fas fa-lock"></i><span>Compras</span></span>
+                                <span class="app-home-bottom-item is-danger"><i class="fas fa-arrow-left"></i><span>Sair</span></span>
+                            </footer>
                         </article>
                     </div>
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#1a1a1a] rounded-b-xl z-20"></div>
@@ -814,7 +1035,7 @@
                             <i class="fas fa-sync-alt"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">Atualizações Semanais</h4>
+                            <h4 class="font-bold text-lg mb-1">Atualizações Recorrentes</h4>
                             <p class="text-gray-400 text-sm">Novos protocolos e ajustes de ciclos liberados com frequência dentro da plataforma.</p>
                         </div>
                     </li>
@@ -832,8 +1053,8 @@
                             <i class="fas fa-fingerprint"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg mb-1">Acesso Imediato e Vitalício</h4>
-                            <p class="text-gray-400 text-sm">Entrou uma vez, acessa para sempre todo o ecossistema de conteúdos e ferramentas.</p>
+                            <h4 class="font-bold text-lg mb-1">Acesso Imediato e Anual</h4>
+                            <p class="text-gray-400 text-sm">Entrou uma vez, acessa por 12 meses todo o ecossistema de conteúdos e ferramentas.</p>
                         </div>
                     </li>
                 </ul>
@@ -967,11 +1188,11 @@
             <div class="bg-biosystem-bg rounded-[22px] p-10 h-full w-full border border-biosystem-500/20">
                 <div class="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span class="bg-biosystem-500 text-black px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-[0_0_20px_rgba(0,212,255,0.5)]">
-                        
+                       
                     </span>
                 </div>
                 
-                <h2 class="font-display text-2xl mt-6 mb-2 font-bold">Peptídeos Essenciais</h2>
+                <h2 class="font-display text-2xl mt-6 mb-2 font-bold">Peptídeos</h2>
                 <p class="text-biosystem-500 text-sm mb-3 uppercase tracking-widest font-semibold">Segredos da Beleza, Pele e Juventude</p>
                 <p class="text-gray-400 text-xs mb-8 uppercase tracking-[0.2em]">Entrega digital instantânea após o pagamento.</p>
                 
@@ -987,7 +1208,7 @@
                 </div>
                 
                 <ul class="text-left space-y-4 mb-10 text-gray-300 text-sm">
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> +60 PROTOCOLOS </li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> +50 PROTOCOLOS </li>
                     <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> SEGURANÇA GARANTIDA</li>
                     <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> 100% GARANTIDO</li>
                     <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> Pagamento seguro com criptografia de nível bancário</li>
@@ -1009,6 +1230,8 @@
     <footer class="py-8 border-t border-white/5 text-center text-sm text-gray-600">
         <p>Ao clicar em "Garantir Minha Vaga", você concorda com os Termos de Compra, Termos de Uso e Política de Privacidade.</p>
         <p class="mt-2 text-xs">Este site é protegido por Google reCAPTCHA. Política de Privacidade e Termos de Serviço.</p>
+        <p class="mt-4 text-xs text-gray-500">© 2026 Biosystem Peptídeos. Todos os direitos reservados.</p>
+        <p class="mt-1 text-xs text-gray-500">LfMf</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
