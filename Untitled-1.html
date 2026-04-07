@@ -1,0 +1,1176 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biosystem Peptídeos - Segredos da Beleza, Pele e Juventude</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        biosystem: {
+                            500: '#00d4ff',
+                            600: '#00a6d6',
+                            900: '#071225',
+                            bg: '#02030a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --primary-green: #00d4ff;
+            --accent-purple: #8a2cff;
+        }
+
+        body {
+            background-color: #02030a;
+            color: #ffffff;
+            overflow-x: hidden;
+            /* Grid Background Tecnológico */
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+        }
+
+        /* Efeitos de Luz Ambiente (Glow Orbs) */
+        .glow-orb {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,212,255,0.16) 0%, rgba(138,44,255,0.1) 38%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary-green) 68%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Glassmorphism Refinado */
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(138, 44, 255, 0.22);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.7), rgba(138, 44, 255, 0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(138, 44, 255, 0.52);
+            box-shadow: 0 15px 40px -5px rgba(138, 44, 255, 0.2), 0 0 28px rgba(0, 212, 255, 0.12);
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Botão Principal com Efeito Shine */
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-25deg);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -150%; }
+            20% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 3.5s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+                transform: translateY(0);
+            }
+            50% {
+                box-shadow: 0 0 42px rgba(0, 212, 255, 0.45);
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Animações de Flutuação */
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .orb-drift {
+            animation: orbDrift 14s ease-in-out infinite;
+        }
+
+        @keyframes orbDrift {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(-22px, 16px, 0) scale(1.08); }
+        }
+
+        .number-breathe {
+            animation: numberBreathe 3.2s ease-in-out infinite;
+        }
+
+        @keyframes numberBreathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.07); }
+        }
+
+        .result-pop {
+            animation: resultPop .45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .resultado-borrado {
+            filter: blur(7px);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .paywall-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(3, 5, 4, 0.2) 0%, rgba(3, 5, 4, 0.65) 100%);
+        }
+
+        .paywall-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.55rem 0.95rem;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            background: rgba(3, 5, 4, 0.82);
+            color: #8cffc8;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 0 22px rgba(0, 212, 255, 0.2);
+        }
+
+        @keyframes resultPop {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Efeito de Scanner Aprimorado */
+        .phone-mockup {
+            position: relative;
+            max-width: 320px;
+            margin: auto;
+            border-radius: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 212, 255, 0.15);
+        }
+
+        .app-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            background:
+                radial-gradient(140% 90% at 20% 8%, rgba(165, 124, 255, 0.18), transparent 60%),
+                radial-gradient(120% 80% at 88% 95%, rgba(93, 255, 198, 0.12), transparent 66%),
+                linear-gradient(165deg, #0f1317 0%, #090b0f 65%, #06070a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.2rem 1.15rem;
+        }
+
+        .app-editorial-card {
+            position: relative;
+            width: 100%;
+            max-width: 268px;
+            aspect-ratio: 1.47 / 1;
+            border-radius: 1rem;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 82% 18%, rgba(211, 130, 255, 0.4), transparent 38%),
+                radial-gradient(circle at 8% 82%, rgba(176, 130, 255, 0.45), transparent 44%),
+                linear-gradient(135deg, #f7f1fa 0%, #eceef7 52%, #e6e9f8 100%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 18px 45px rgba(147, 106, 255, 0.28);
+            animation: editorialCardDrift 8s ease-in-out infinite;
+        }
+
+        .app-editorial-card::before {
+            content: "";
+            position: absolute;
+            inset: -22% auto -14% -30%;
+            width: 75%;
+            background:
+                radial-gradient(circle at 42% 18%, rgba(212, 162, 255, 0.5), transparent 48%),
+                radial-gradient(circle at 30% 48%, rgba(180, 146, 255, 0.55), transparent 45%),
+                radial-gradient(circle at 60% 80%, rgba(178, 142, 255, 0.42), transparent 46%);
+            filter: blur(3px);
+            transform: rotate(-8deg);
+            animation: editorialMist 9s ease-in-out infinite;
+        }
+
+        .app-editorial-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.42) 38%, transparent 55%);
+            transform: translateX(-135%);
+            animation: editorialShine 6s ease-in-out infinite;
+        }
+
+        .app-editorial-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1.05fr 0.72fr;
+            align-items: stretch;
+            gap: 0.55rem;
+            padding: 0.65rem 0.7rem;
+        }
+
+        .app-editorial-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #121018;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+        }
+
+        .app-editorial-kicker {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.45rem;
+            letter-spacing: 0.23em;
+            text-transform: uppercase;
+            opacity: 0.78;
+            margin-bottom: 0.25rem;
+        }
+
+        .app-editorial-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.03rem;
+            line-height: 0.88;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            max-width: 9.1ch;
+            margin: 0;
+        }
+
+        .app-editorial-sub {
+            margin-top: 0.42rem;
+            font-size: 0.41rem;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            opacity: 0.62;
+            font-weight: 500;
+        }
+
+        .app-editorial-book {
+            position: relative;
+            align-self: center;
+            width: 100%;
+            height: 84%;
+            max-height: 144px;
+            border-radius: 0.45rem;
+            background:
+                linear-gradient(185deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 45%),
+                linear-gradient(155deg, #c65dff 0%, #9149ff 48%, #5823be 100%);
+            box-shadow: 0 12px 24px rgba(111, 54, 201, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            overflow: hidden;
+            animation: editorialBookPulse 4.5s ease-in-out infinite;
+        }
+
+        .app-editorial-book::before {
+            content: "";
+            position: absolute;
+            top: 0.45rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 68%;
+            aspect-ratio: 1;
+            border-radius: 999px;
+            background:
+                radial-gradient(circle at 36% 24%, rgba(255, 255, 255, 0.95), rgba(210, 227, 255, 0.35) 48%, rgba(111, 40, 180, 0.1) 72%, transparent 76%),
+                radial-gradient(circle at 66% 70%, rgba(84, 233, 255, 0.75), transparent 62%);
+            filter: blur(0.3px);
+        }
+
+        .app-editorial-book::after {
+            content: "";
+            position: absolute;
+            inset: 0.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 0.32rem;
+            pointer-events: none;
+        }
+
+        .app-book-label {
+            position: absolute;
+            left: 0.4rem;
+            right: 0.4rem;
+            bottom: 0.45rem;
+            padding: 0.3rem 0.36rem;
+            border-radius: 0.3rem;
+            background: rgba(10, 8, 20, 0.58);
+            color: #f4f5ff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.39rem;
+            line-height: 1.05;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            font-weight: 700;
+            backdrop-filter: blur(2px);
+        }
+
+        @keyframes editorialCardDrift {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.015); }
+        }
+
+        @keyframes editorialMist {
+            0%, 100% { transform: translateX(0) rotate(-8deg); opacity: 0.95; }
+            50% { transform: translateX(12px) rotate(-2deg); opacity: 0.7; }
+        }
+
+        @keyframes editorialShine {
+            0%, 75%, 100% { transform: translateX(-135%); }
+            38% { transform: translateX(145%); }
+        }
+
+        @keyframes editorialBookPulse {
+            0%, 100% { transform: translateY(0); box-shadow: 0 12px 24px rgba(111, 54, 201, 0.45); }
+            50% { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(111, 54, 201, 0.56); }
+        }
+
+        .scanner-line {
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 212, 255, 0.1) 90%, var(--primary-green) 100%);
+            top: -150px;
+            border-bottom: 2px solid var(--primary-green);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+            animation: scan 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+            border-radius: 3rem;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -150px; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* DNA Hero - versão avançada */
+        .dna-wrapper {
+            position: absolute;
+            right: -11%;
+            top: 50%;
+            width: min(72vw, 700px);
+            height: min(72vw, 700px);
+            transform: translateY(-50%);
+            opacity: 0.4;
+            z-index: -1;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: hue-rotate(88deg) saturate(1.2) brightness(1.12);
+            animation: dnaWrapFloat 7.5s ease-in-out infinite;
+        }
+
+        .dna-helix {
+            width: 100%;
+            height: 100%;
+            transform-origin: 50% 50%;
+            animation: dnaSpin 18s linear infinite;
+        }
+
+        .dna-ring {
+            fill: none;
+            stroke: rgba(0, 212, 255, 0.24);
+            stroke-width: 1.5;
+            stroke-dasharray: 6 12;
+            animation: dnaDash 14s linear infinite;
+        }
+
+        .dna-ring--inner {
+            stroke: rgba(138, 44, 255, 0.2);
+            animation-duration: 9s;
+            animation-direction: reverse;
+        }
+
+        .dna-strand {
+            fill: none;
+            stroke-width: 5;
+            stroke-linecap: round;
+        }
+
+        .dna-strand--front {
+            stroke: url(#dnaGradientFront);
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.65));
+            animation: dnaFlicker 5.5s ease-in-out infinite;
+        }
+
+        .dna-strand--back {
+            stroke: url(#dnaGradientBack);
+            opacity: 0.7;
+        }
+
+        .dna-bridge {
+            stroke: url(#dnaBridgeGradient);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 28 88;
+            animation: dnaBridgeFlow 3.8s linear infinite;
+        }
+
+        .dna-node {
+            fill: url(#dnaNodeGradient);
+            filter: url(#dnaNodeGlow);
+            transform-origin: center;
+            animation: dnaNodePulse 2.7s ease-in-out infinite;
+        }
+
+        .dna-sweep {
+            opacity: 0.25;
+            animation: dnaSweep 4.6s ease-in-out infinite;
+        }
+
+        .dna-orbit {
+            transform-origin: 310px 306px;
+            animation: dnaOrbit 11s linear infinite;
+        }
+
+        .dna-orbit--rev {
+            animation-direction: reverse;
+            animation-duration: 15s;
+        }
+
+        .dna-particle {
+            fill: #97e6ff;
+            filter: drop-shadow(0 0 8px rgba(151, 230, 255, 0.8));
+        }
+
+        @keyframes dnaSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes dnaWrapFloat {
+            0%, 100% { transform: translateY(-50%) translateX(0) scale(1); }
+            50% { transform: translateY(calc(-50% - 14px)) translateX(-8px) scale(1.03); }
+        }
+
+        @keyframes dnaDash {
+            from { stroke-dashoffset: 0; }
+            to { stroke-dashoffset: 180; }
+        }
+
+        @keyframes dnaBridgeFlow {
+            from { stroke-dashoffset: 180; opacity: 0.45; }
+            50% { opacity: 1; }
+            to { stroke-dashoffset: 0; opacity: 0.45; }
+        }
+
+        @keyframes dnaFlicker {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes dnaNodePulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.24); }
+        }
+
+        @keyframes dnaSweep {
+            0% { transform: translateY(-180px); opacity: 0; }
+            18% { opacity: 0.45; }
+            75% { opacity: 0.32; }
+            100% { transform: translateY(180px); opacity: 0; }
+        }
+
+        @keyframes dnaOrbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .dna-wrapper {
+                animation: none !important;
+            }
+
+            .btn-glow::after,
+            .float-anim,
+            .scanner-line,
+            .dna-helix,
+            .dna-ring,
+            .dna-bridge,
+            .dna-node,
+            .dna-sweep,
+            .dna-orbit,
+            .app-editorial-card,
+            .app-editorial-card::before,
+            .app-editorial-card::after,
+            .app-editorial-book,
+            .paywall-chip,
+            .pulse-glow,
+            .orb-drift,
+            .number-breathe,
+            .result-pop {
+                animation: none !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-biosystem-500 selection:text-black">
+
+    <div class="glow-orb" style="top: -10%; left: -10%;"></div>
+    <div class="glow-orb orb-drift" style="top: 40%; right: -20%; opacity: 0.5;"></div>
+
+    <header class="min-h-screen flex flex-col items-center justify-center px-6 relative py-20">
+        
+        <div class="dna-wrapper hidden md:block">
+            <svg class="dna-helix" viewBox="0 0 620 620" aria-hidden="true">
+                <defs>
+                    <linearGradient id="dnaGradientFront" x1="155" y1="48" x2="465" y2="564" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#8df3ff"></stop>
+                        <stop offset="45%" stop-color="#22d4ff"></stop>
+                        <stop offset="100%" stop-color="#7a2dff"></stop>
+                    </linearGradient>
+                    <linearGradient id="dnaGradientBack" x1="465" y1="48" x2="155" y2="564" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#9e56ff"></stop>
+                        <stop offset="55%" stop-color="#00b8ff"></stop>
+                        <stop offset="100%" stop-color="#8df3ff"></stop>
+                    </linearGradient>
+                    <linearGradient id="dnaBridgeGradient" x1="176" y1="90" x2="444" y2="546" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#7cdfff" stop-opacity="0.16"></stop>
+                        <stop offset="50%" stop-color="#7cdfff" stop-opacity="1"></stop>
+                        <stop offset="100%" stop-color="#7cdfff" stop-opacity="0.16"></stop>
+                    </linearGradient>
+                    <radialGradient id="dnaNodeGradient" cx="50%" cy="50%" r="65%">
+                        <stop offset="0%" stop-color="#f7fffd"></stop>
+                        <stop offset="55%" stop-color="#8de5ff"></stop>
+                        <stop offset="100%" stop-color="#8a2cff"></stop>
+                    </radialGradient>
+                    <linearGradient id="dnaSweepGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#62dcff" stop-opacity="0"></stop>
+                        <stop offset="45%" stop-color="#62dcff" stop-opacity="0.18"></stop>
+                        <stop offset="60%" stop-color="#62dcff" stop-opacity="0.72"></stop>
+                        <stop offset="100%" stop-color="#62dcff" stop-opacity="0"></stop>
+                    </linearGradient>
+                    <filter id="dnaNodeGlow" x="-120%" y="-120%" width="340%" height="340%">
+                        <feGaussianBlur stdDeviation="2.4" result="blur"></feGaussianBlur>
+                        <feMerge>
+                            <feMergeNode in="blur"></feMergeNode>
+                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <ellipse class="dna-ring" cx="310" cy="306" rx="218" ry="252"></ellipse>
+                <ellipse class="dna-ring dna-ring--inner" cx="310" cy="306" rx="186" ry="220"></ellipse>
+
+                <g class="dna-core">
+                    <path class="dna-strand dna-strand--front" d="M310 48 C438 92 438 176 310 220 C182 264 182 348 310 392 C438 436 438 520 310 564"></path>
+                    <path class="dna-strand dna-strand--back" d="M310 48 C182 92 182 176 310 220 C438 264 438 348 310 392 C182 436 182 520 310 564"></path>
+                </g>
+
+                <g class="dna-bridges">
+                    <line class="dna-bridge" x1="238" y1="90" x2="382" y2="90" style="animation-delay:-0.2s;"></line>
+                    <line class="dna-bridge" x1="210" y1="128" x2="410" y2="128" style="animation-delay:-0.45s;"></line>
+                    <line class="dna-bridge" x1="188" y1="166" x2="432" y2="166" style="animation-delay:-0.65s;"></line>
+                    <line class="dna-bridge" x1="176" y1="204" x2="444" y2="204" style="animation-delay:-0.85s;"></line>
+                    <line class="dna-bridge" x1="188" y1="242" x2="432" y2="242" style="animation-delay:-1.05s;"></line>
+                    <line class="dna-bridge" x1="210" y1="280" x2="410" y2="280" style="animation-delay:-1.25s;"></line>
+                    <line class="dna-bridge" x1="238" y1="318" x2="382" y2="318" style="animation-delay:-1.45s;"></line>
+                    <line class="dna-bridge" x1="210" y1="356" x2="410" y2="356" style="animation-delay:-1.65s;"></line>
+                    <line class="dna-bridge" x1="188" y1="394" x2="432" y2="394" style="animation-delay:-1.85s;"></line>
+                    <line class="dna-bridge" x1="176" y1="432" x2="444" y2="432" style="animation-delay:-2.05s;"></line>
+                    <line class="dna-bridge" x1="188" y1="470" x2="432" y2="470" style="animation-delay:-2.25s;"></line>
+                    <line class="dna-bridge" x1="210" y1="508" x2="410" y2="508" style="animation-delay:-2.45s;"></line>
+                    <line class="dna-bridge" x1="238" y1="546" x2="382" y2="546" style="animation-delay:-2.65s;"></line>
+                </g>
+
+                <g class="dna-nodes">
+                    <circle class="dna-node" cx="238" cy="90" r="5"></circle>
+                    <circle class="dna-node" cx="382" cy="90" r="5"></circle>
+                    <circle class="dna-node" cx="210" cy="128" r="4.8"></circle>
+                    <circle class="dna-node" cx="410" cy="128" r="4.8"></circle>
+                    <circle class="dna-node" cx="188" cy="166" r="4.8"></circle>
+                    <circle class="dna-node" cx="432" cy="166" r="4.8"></circle>
+                    <circle class="dna-node" cx="176" cy="204" r="4.6"></circle>
+                    <circle class="dna-node" cx="444" cy="204" r="4.6"></circle>
+                    <circle class="dna-node" cx="188" cy="242" r="4.8"></circle>
+                    <circle class="dna-node" cx="432" cy="242" r="4.8"></circle>
+                    <circle class="dna-node" cx="210" cy="280" r="4.8"></circle>
+                    <circle class="dna-node" cx="410" cy="280" r="4.8"></circle>
+                    <circle class="dna-node" cx="238" cy="318" r="5"></circle>
+                    <circle class="dna-node" cx="382" cy="318" r="5"></circle>
+                    <circle class="dna-node" cx="210" cy="356" r="4.8"></circle>
+                    <circle class="dna-node" cx="410" cy="356" r="4.8"></circle>
+                    <circle class="dna-node" cx="188" cy="394" r="4.8"></circle>
+                    <circle class="dna-node" cx="432" cy="394" r="4.8"></circle>
+                    <circle class="dna-node" cx="176" cy="432" r="4.6"></circle>
+                    <circle class="dna-node" cx="444" cy="432" r="4.6"></circle>
+                    <circle class="dna-node" cx="188" cy="470" r="4.8"></circle>
+                    <circle class="dna-node" cx="432" cy="470" r="4.8"></circle>
+                    <circle class="dna-node" cx="210" cy="508" r="4.8"></circle>
+                    <circle class="dna-node" cx="410" cy="508" r="4.8"></circle>
+                    <circle class="dna-node" cx="238" cy="546" r="5"></circle>
+                    <circle class="dna-node" cx="382" cy="546" r="5"></circle>
+                </g>
+
+                <rect class="dna-sweep" x="112" y="110" width="396" height="392" rx="196" fill="url(#dnaSweepGradient)"></rect>
+
+                <g class="dna-orbit">
+                    <circle class="dna-particle" cx="310" cy="58" r="5.3"></circle>
+                    <circle class="dna-particle" cx="490" cy="306" r="4.2"></circle>
+                    <circle class="dna-particle" cx="310" cy="554" r="4.6"></circle>
+                </g>
+                <g class="dna-orbit dna-orbit--rev">
+                    <circle class="dna-particle" cx="126" cy="306" r="4.2"></circle>
+                    <circle class="dna-particle" cx="310" cy="88" r="3.9"></circle>
+                    <circle class="dna-particle" cx="468" cy="498" r="3.7"></circle>
+                </g>
+            </svg>
+        </div>
+
+        <div class="text-center z-10 max-w-4xl mx-auto" data-aos="zoom-out" data-aos-duration="1200">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-biosystem-500/30 bg-biosystem-500/10 backdrop-blur-sm mb-8">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-biosystem-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-biosystem-500"></span>
+                </span>
+                <h2 class="tracking-[0.08em] text-[11px] font-semibold text-biosystem-500 uppercase">OFERTA POR TEMPO LIMITADO, RESTAM 30 VAGAS COM PREÇO PROMOCIONAL ‼️</h2>
+            </div>
+            
+            <h3 class="text-sm md:text-base font-display mb-6 opacity-70 tracking-[0.2em] uppercase">Biosystem Peptídeos</h3>
+            
+            <h1 class="font-display text-5xl md:text-7xl font-black mb-8 leading-[1.1]">
+                <span class="gradient-text">Peptídeos Essenciais - Domine a Ciência da Regeneração, Queima de Gordura e Ganho de Massa</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-400 mb-12 text-lg md:text-xl font-light leading-relaxed">
+                Manual de Diluição, Dosagem, Ciclos, Cálculadora de doses, Estudos Científicos, Manual de Aplicação e Contato de compra segura
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-14" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-center group">
+                    <div class="font-display text-3xl font-bold text-biosystem-500 group-hover:scale-110 transition-transform number-breathe">+60 PROTOCOLOS</div>
+                    <div class="text-xs opacity-60 uppercase tracking-widest mt-1">masculinos e femininos</div>
+                </div>
+                <div class="h-12 w-px bg-gradient-to-b from-transparent via-gray-700 to-transparent"></div>
+                <div class="text-center group">
+                    <div class="font-display text-3xl font-bold text-biosystem-500 group-hover:scale-110 transition-transform number-breathe" style="animation-delay: .18s;">100%</div>
+                    <div class="text-xs opacity-60 uppercase tracking-widest mt-1">GARANTIDO</div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="400">
+                <a href="#precos" class="inline-block bg-biosystem-500 text-black font-display font-black text-lg py-5 px-12 rounded-full btn-glow uppercase tracking-wider">
+                    OBTER ACESSO
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-down">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">O que você vai dominar no <span class="text-biosystem-500">Biosystem</span></h2>
+                <p class="text-gray-400 text-lg">Protocolos completos para regeneração, performance, definição e aplicação segura.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto bg-biosystem-900/50 rounded-2xl flex items-center justify-center mb-6 border border-biosystem-500/20 group-hover:bg-biosystem-500/10 transition-colors">
+                        <i class="fas fa-microscope text-4xl text-biosystem-500"></i>
+                    </div>
+                    <h3 class="font-display font-bold mb-3 text-2xl text-white group-hover:text-biosystem-500 transition-colors">BPC-157</h3>
+                    <p class="text-gray-400 leading-relaxed">Protocolo para recuperação muscular e articular com foco em reparo tecidual e redução de inflamação.</p>
+                </div>
+
+                <div class="glass-card p-10 text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto bg-biosystem-900/50 rounded-2xl flex items-center justify-center mb-6 border border-biosystem-500/20 group-hover:bg-biosystem-500/10 transition-colors">
+                        <i class="fas fa-fire text-4xl text-biosystem-500"></i>
+                    </div>
+                    <h3 class="font-display font-bold mb-3 text-2xl text-white group-hover:text-biosystem-500 transition-colors">GHK-Cu</h3>
+                    <p class="text-gray-400 leading-relaxed">Peptídeo voltado para pele e cabelo, com estratégias de uso para firmeza, viço e regeneração cutânea.</p>
+                </div>
+
+                <div class="glass-card p-10 text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto bg-biosystem-900/50 rounded-2xl flex items-center justify-center mb-6 border border-biosystem-500/20 group-hover:bg-biosystem-500/10 transition-colors">
+                        <i class="fas fa-bolt text-4xl text-biosystem-500"></i>
+                    </div>
+                    <h3 class="font-display font-bold mb-3 text-2xl text-white group-hover:text-biosystem-500 transition-colors">Semaglutida</h3>
+                    <p class="text-gray-400 leading-relaxed">Guia prático de titulação para controle de apetite, queima de gordura e consistência nos resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden border-y border-white/5 bg-gradient-to-b from-transparent to-black/80">
+        <div class="glow-orb" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; opacity: 0.3;"></div>
+        
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 px-6 relative z-10">
+            <div class="flex-1 w-full flex justify-center" data-aos="fade-right">
+                <div class="phone-mockup float-anim border-[6px] border-[#1a1a1a] bg-black w-[320px] h-[640px]">
+                    <div class="scanner-line overflow-hidden rounded-[2.5rem]"></div>
+                    <div class="app-screen">
+                        <article class="app-editorial-card" aria-label="Prévia do material Peptídeos Essenciais">
+                            <div class="app-editorial-content">
+                                <div class="app-editorial-left">
+                                    <span class="app-editorial-kicker">Biosystem Peptídeos</span>
+                                    <h3 class="app-editorial-title">Peptídeos Essenciais</h3>
+                                    <p class="app-editorial-sub">Segredos da Beleza, Pele e Juventude</p>
+                                </div>
+                                <div class="app-editorial-book" aria-hidden="true">
+                                    <span class="app-book-label">Segredos da<br>Beleza e Juventude</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#1a1a1a] rounded-b-xl z-20"></div>
+                </div>
+            </div>
+            
+            <div class="flex-1" data-aos="fade-left">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                    Plataforma completa para <br>
+                    <span class="gradient-text">evoluir com precisão</span>
+                </h2>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors cursor-default">
+                        <div class="mt-1 bg-biosystem-500/20 p-2 rounded-lg text-biosystem-500">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Atualizações Semanais</h4>
+                            <p class="text-gray-400 text-sm">Novos protocolos e ajustes de ciclos liberados com frequência dentro da plataforma.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors cursor-default">
+                        <div class="mt-1 bg-biosystem-500/20 p-2 rounded-lg text-biosystem-500">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Calculadora de Dose</h4>
+                            <p class="text-gray-400 text-sm">Faça a conversão exata de diluição para aplicação sem erro na seringa U-100.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors cursor-default">
+                        <div class="mt-1 bg-biosystem-500/20 p-2 rounded-lg text-biosystem-500">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Acesso Imediato e Vitalício</h4>
+                            <p class="text-gray-400 text-sm">Entrou uma vez, acessa para sempre todo o ecossistema de conteúdos e ferramentas.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Calculadora de <span class="text-biosystem-500">Dosagem Inteligente</span></h2>
+                <p class="text-gray-400">Simule sua dose com precisão e desbloqueie o resultado exato no acesso completo.</p>
+            </div>
+            
+            <div class="glass-card p-8 md:p-12" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div>
+                            <label for="peptideo-mg" class="block text-sm font-medium text-gray-400 mb-2">Quantidade do Peptídeo no Frasco (mg)</label>
+                            <input type="number" inputmode="decimal" id="peptideo-mg" placeholder="Ex: 5" class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-biosystem-500 focus:outline-none focus:ring-1 focus:ring-biosystem-500 transition">
+                        </div>
+                        <div>
+                            <label for="agua-ml" class="block text-sm font-medium text-gray-400 mb-2">Água Bacteriostática Adicionada (mL)</label>
+                            <input type="number" inputmode="decimal" id="agua-ml" placeholder="Ex: 2" class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-biosystem-500 focus:outline-none focus:ring-1 focus:ring-biosystem-500 transition">
+                        </div>
+                        <div>
+                            <label for="dosagem-mcg" class="block text-sm font-medium text-gray-400 mb-2">Dose Desejada por Aplicação (mcg)</label>
+                            <input type="number" inputmode="decimal" id="dosagem-mcg" placeholder="Ex: 250" class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-biosystem-500 focus:outline-none focus:ring-1 focus:ring-biosystem-500 transition">
+                        </div>
+
+                        <p id="mensagem-erro" class="hidden text-sm text-red-300 bg-red-500/10 border border-red-500/40 rounded-lg px-4 py-3" role="alert" aria-live="polite"></p>
+                        
+                        <button onclick="calcularDosagem()" class="w-full bg-biosystem-900 hover:bg-biosystem-500 hover:text-black text-biosystem-500 border border-biosystem-500/50 font-bold py-4 rounded-xl transition-all duration-300">
+                            <i class="fas fa-calculator mr-2"></i> Calcular Dose
+                        </button>
+                        <a href="#precos" class="w-full inline-flex items-center justify-center gap-2 text-center bg-biosystem-500/10 hover:bg-biosystem-500/20 text-biosystem-500 border border-biosystem-500/40 font-semibold py-3 rounded-xl transition-all duration-300">
+                            <i class="fas fa-unlock-alt"></i> Desbloquear Resultado Completo
+                        </a>
+                    </div>
+
+                    <div class="h-full flex flex-col justify-center items-center text-center p-8 bg-black/40 rounded-2xl border border-white/5">
+                        <i class="fas fa-syringe text-4xl text-gray-600 mb-4" id="seringa-icon" aria-hidden="true"></i>
+                        <h4 class="text-lg text-gray-400 mb-2">Resultado da Simulação</h4>
+
+                        <div id="resultado-bloqueado" class="w-full transition-all duration-500">
+                            <div class="bg-biosystem-500/10 border border-biosystem-500/30 rounded-xl p-6 mt-4 relative overflow-hidden">
+                                <div class="resultado-borrado">
+                                    <span class="block text-sm text-gray-400 mb-1">Dose por aplicação (prévia)</span>
+                                    <span id="valor-resultado-borrado" class="font-display text-4xl font-black text-biosystem-500">••• UI</span>
+                                    <span id="valor-ml-borrado" class="block text-sm text-biosystem-500/80 mt-2">••• mL por aplicação</span>
+                                    <span class="block text-xs text-biosystem-500/70 mt-2">Desbloqueie para ver o valor exato da sua dose.</span>
+                                </div>
+                                <div class="paywall-overlay">
+                                    <span class="paywall-chip"><i class="fas fa-lock"></i> Resultado bloqueado</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="resultado-calculo" class="hidden w-full transition-all duration-500" aria-live="polite">
+                            <div class="bg-biosystem-500/10 border border-biosystem-500/30 rounded-xl p-6 mt-4">
+                                <span class="block text-sm text-gray-400 mb-1">Dose por aplicação</span>
+                                <span id="valor-resultado" class="font-display text-4xl font-black text-biosystem-500">0 UI</span>
+                                <span id="valor-ml" class="block text-sm text-biosystem-500/80 mt-2">0,000 mL por aplicação</span>
+                                <span class="block text-xs text-biosystem-500/70 mt-2">Valor exato para aplicação com seringa U-100.</span>
+                            </div>
+                        </div>
+                        
+                        <p id="mensagem-espera" class="text-sm text-gray-600 mt-4">Preencha os dados para simular sua dose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 relative border-y border-white/5 bg-black/40 z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Resultados de quem já aplicou os <span class="gradient-text">Protocolos Biosystem</span></h2>
+                <p class="text-gray-400">Relatos reais de alunos que seguiram os ciclos com estratégia e constância.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-8" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center gap-1 text-biosystem-500 mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed">"A calculadora e os protocolos me deram segurança total na aplicação. Saí do achismo e comecei a ter resultado real."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center font-bold text-gray-400">RC</div>
+                        <div>
+                            <h5 class="font-bold text-sm">Rodrigo C.</h5>
+                            <span class="text-xs text-biosystem-500"><i class="fas fa-check-circle mr-1"></i>Membro verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center gap-1 text-biosystem-500 mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed">"Consegui organizar o ciclo para perda de gordura sem improviso. O passo a passo é direto e fácil de seguir."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center font-bold text-gray-400">MF</div>
+                        <div>
+                            <h5 class="font-bold text-sm">Marcos F.</h5>
+                            <span class="text-xs text-biosystem-500"><i class="fas fa-check-circle mr-1"></i>Membro verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="flex items-center gap-1 text-biosystem-500 mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed">"Economizei tempo e dinheiro com consultoria básica. Hoje tenho autonomia para calcular, aplicar e acompanhar tudo."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center font-bold text-gray-400">TL</div>
+                        <div>
+                            <h5 class="font-bold text-sm">Thiago L.</h5>
+                            <span class="text-xs text-biosystem-500"><i class="fas fa-check-circle mr-1"></i>Membro verificado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precos" class="py-32 text-center px-6 relative">
+        <div class="glow-orb" style="bottom: -20%; left: 50%; transform: translateX(-50%); opacity: 0.4;"></div>
+        
+        <div class="max-w-lg mx-auto glass-card pulse-glow p-1 relative z-10" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="bg-biosystem-bg rounded-[22px] p-10 h-full w-full border border-biosystem-500/20">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span class="bg-biosystem-500 text-black px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-[0_0_20px_rgba(0,212,255,0.5)]">
+                        OFERTA POR TEMPO LIMITADO, RESTAM 30 VAGAS COM PREÇO PROMOCIONAL ‼️
+                    </span>
+                </div>
+                
+                <h2 class="font-display text-2xl mt-6 mb-2 font-bold">Peptídeos Essenciais</h2>
+                <p class="text-biosystem-500 text-sm mb-3 uppercase tracking-widest font-semibold">Segredos da Beleza, Pele e Juventude</p>
+                <p class="text-gray-400 text-xs mb-8 uppercase tracking-[0.2em]">Entrega digital instantânea após o pagamento.</p>
+                
+                <div class="flex flex-col items-center justify-center mb-8">
+                    <span class="text-gray-500 line-through text-lg font-medium mb-2">De R$ 229,90</span>
+                    <div class="flex items-start gap-2">
+                        <span class="text-2xl mt-2 font-bold text-gray-300">R$</span>
+                        <span class="font-display text-7xl font-black gradient-text">76<span class="text-5xl">,90</span></span>
+                    </div>
+                    <div class="text-biosystem-500 font-medium mt-2 bg-biosystem-500/10 px-4 py-1 rounded-full text-sm">
+                        ou 12x de R$ 7,95
+                    </div>
+                </div>
+                
+                <ul class="text-left space-y-4 mb-10 text-gray-300 text-sm">
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> 7 DIAS DE GARANTIA</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> SEGURANÇA GARANTIDA</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> 100% GARANTIDO</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-biosystem-500"></i> Pagamento seguro com criptografia de nível bancário</li>
+                </ul>
+                
+                <a href="https://pay.kiwify.com.br/EmtU17V?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="w-full bg-biosystem-500 text-black font-display font-black py-5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_40px_rgba(0,212,255,0.6)] hover:-translate-y-1 text-lg uppercase tracking-wider relative overflow-hidden group inline-flex items-center justify-center">
+                    <span class="relative z-10">Garantir Minha Vaga</span>
+                    <div class="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300 ease-out z-0"></div>
+                </a>
+                
+                <div class="flex items-center justify-center gap-2 mt-6 opacity-50">
+                    <i class="fas fa-lock text-xs"></i>
+                    <p class="text-xs uppercase tracking-widest">Compra 100% segura</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-white/5 text-center text-sm text-gray-600">
+        <p>Ao clicar em "Garantir Minha Vaga", você concorda com os Termos de Compra, Termos de Uso e Política de Privacidade.</p>
+        <p class="mt-2 text-xs">Este site é protegido por Google reCAPTCHA. Política de Privacidade e Termos de Serviço.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Lógica da calculadora com validação robusta e suporte a vírgula decimal (pt-BR).
+        const camposCalculadora = ['peptideo-mg', 'agua-ml', 'dosagem-mcg'];
+        const CHAVE_ACESSO_PAGO = 'biosystem_acesso_pago';
+
+        // Atalho opcional para teste: abra a página com ?acesso=1 para liberar no navegador atual.
+        if (new URLSearchParams(window.location.search).get('acesso') === '1') {
+            localStorage.setItem(CHAVE_ACESSO_PAGO, '1');
+        }
+
+        function temAcessoPago() {
+            return localStorage.getItem(CHAVE_ACESSO_PAGO) === '1';
+        }
+
+        function atualizarMensagemEspera() {
+            const mensagemEspera = document.getElementById('mensagem-espera');
+            const resultadoBloqueadoDiv = document.getElementById('resultado-bloqueado');
+            resultadoBloqueadoDiv.classList.toggle('hidden', temAcessoPago());
+
+            if (!temAcessoPago()) {
+                atualizarPreviewBloqueado();
+            }
+
+            mensagemEspera.textContent = temAcessoPago()
+                ? 'Resultado liberado para esta sessão.'
+                : 'Resultado bloqueado para visitantes.';
+        }
+
+        function parseNumeroPositivo(valorBruto) {
+            const normalizado = String(valorBruto || '').trim().replace(',', '.');
+            const numero = Number(normalizado);
+            if (!Number.isFinite(numero) || numero <= 0) return null;
+            return numero;
+        }
+
+        function formatarNumero(valor, casas) {
+            return valor.toLocaleString('pt-BR', {
+                minimumFractionDigits: casas,
+                maximumFractionDigits: casas
+            });
+        }
+
+        function mascararNumero(valor, casas) {
+            return formatarNumero(valor, casas).replace(/\d/g, '•');
+        }
+
+        function limparErro() {
+            const erro = document.getElementById('mensagem-erro');
+            erro.textContent = '';
+            erro.classList.add('hidden');
+        }
+
+        function mostrarErro(mensagem) {
+            const erro = document.getElementById('mensagem-erro');
+            erro.textContent = mensagem;
+            erro.classList.remove('hidden');
+        }
+
+        function atualizarPreviewBloqueado(uiExatas = null, mlNecessarios = null) {
+            const valorUiBorrado = document.getElementById('valor-resultado-borrado');
+            const valorMlBorrado = document.getElementById('valor-ml-borrado');
+
+            if (uiExatas !== null && mlNecessarios !== null) {
+                valorUiBorrado.textContent = `${mascararNumero(uiExatas, 1)} UI`;
+                valorMlBorrado.textContent = `${mascararNumero(mlNecessarios, 3)} mL por aplicação`;
+                return;
+            }
+
+            valorUiBorrado.textContent = '••• UI';
+            valorMlBorrado.textContent = '••• mL por aplicação';
+        }
+
+        function resetarResultado() {
+            const resultadoDiv = document.getElementById('resultado-calculo');
+            const resultadoBloqueadoDiv = document.getElementById('resultado-bloqueado');
+            const mensagemEspera = document.getElementById('mensagem-espera');
+            const seringa = document.getElementById('seringa-icon');
+
+            resultadoDiv.classList.add('hidden');
+            resultadoDiv.classList.remove('result-pop');
+            resultadoBloqueadoDiv.classList.toggle('hidden', temAcessoPago());
+
+            if (!temAcessoPago()) {
+                atualizarPreviewBloqueado();
+            }
+
+            mensagemEspera.classList.remove('hidden');
+            seringa.classList.remove('text-biosystem-500');
+            seringa.classList.add('text-gray-600');
+        }
+
+        function calcularDosagem() {
+            limparErro();
+
+            const peptideoMg = parseNumeroPositivo(document.getElementById('peptideo-mg').value);
+            const aguaMl = parseNumeroPositivo(document.getElementById('agua-ml').value);
+            const dosagemMcg = parseNumeroPositivo(document.getElementById('dosagem-mcg').value);
+
+            if (!peptideoMg || !aguaMl || !dosagemMcg) {
+                resetarResultado();
+                mostrarErro('Preencha todos os campos com valores válidos e maiores que zero.');
+                return;
+            }
+
+            const totalMcg = peptideoMg * 1000;
+            const concentracao = totalMcg / aguaMl;
+            const mlNecessarios = dosagemMcg / concentracao;
+            const uiExatas = mlNecessarios * 100;
+
+            if (!Number.isFinite(uiExatas) || uiExatas <= 0) {
+                resetarResultado();
+                mostrarErro('Não foi possível calcular. Revise os valores informados.');
+                return;
+            }
+
+            if (!temAcessoPago()) {
+                resetarResultado();
+                atualizarPreviewBloqueado(uiExatas, mlNecessarios);
+                document.getElementById('seringa-icon').classList.add('text-biosystem-500');
+                document.getElementById('seringa-icon').classList.remove('text-gray-600');
+                document.getElementById('mensagem-espera').textContent = 'Desbloqueie para ver o valor exato da dose.';
+                return;
+            }
+
+            const resultadoDiv = document.getElementById('resultado-calculo');
+            const resultadoBloqueadoDiv = document.getElementById('resultado-bloqueado');
+            const mensagemEspera = document.getElementById('mensagem-espera');
+            const seringa = document.getElementById('seringa-icon');
+            const valorUi = document.getElementById('valor-resultado');
+            const valorMl = document.getElementById('valor-ml');
+
+            mensagemEspera.classList.add('hidden');
+            seringa.classList.add('text-biosystem-500');
+            seringa.classList.remove('text-gray-600');
+            resultadoBloqueadoDiv.classList.add('hidden');
+            resultadoDiv.classList.remove('hidden');
+            resultadoDiv.classList.remove('result-pop');
+            void resultadoDiv.offsetWidth;
+            resultadoDiv.classList.add('result-pop');
+
+            valorUi.textContent = `${formatarNumero(uiExatas, 1)} UI`;
+            valorMl.textContent = `${formatarNumero(mlNecessarios, 3)} mL por aplicação`;
+        }
+
+        camposCalculadora.forEach((id) => {
+            const campo = document.getElementById(id);
+            campo.addEventListener('input', () => {
+                limparErro();
+            });
+        });
+
+        atualizarMensagemEspera();
+    </script>
+</body>
+</html>
